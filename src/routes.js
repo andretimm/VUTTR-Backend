@@ -3,26 +3,17 @@ const express = require('express');
 //Instacia rotas
 const routes = express.Router();
 
+//Importa controllers
+const ToolsController = require('./controllers/ToolsController');
+
 //Retorna ferramentas
-routes.get('/tools', function (req, res) {
-    var tag = req.param('tag');
-    if(tag){
-        res.status(200).json(tag);
-    }else{
-        res.status(200).json('tools');
-    }   
-});
+routes.get('/tools', ToolsController.getTools);
 
 //Cria ferramenta
-routes.post('/tools', function (req, res) {
-    res.status(201).json('create tootls'); 
-});
+routes.post('/tools', ToolsController.setTools);
 
 //Deleta ferramenta
-routes.delete('/tools/:id', function (req, res) {
-    var id = req.params.id;
-    res.status(200).json('delete tools');     
-});
+routes.delete('/tools/:id', ToolsController.removeTools);
 
 //Exporta rotas
 module.exports = routes;
