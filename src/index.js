@@ -28,3 +28,5 @@ app.use(require('./routes'));
 server.listen(3000, () => {
     console.log('Server iniciado na porta 3000');
 });
+
+module.exports = app; // Necessario para rodas os testes

@@ -90,6 +90,12 @@ API para a aplicação VUTTR (Very Useful Tools to Remember). A aplicação é u
               "__v": 0
             }
 
++ Response 401 (application/json)
+
+            {
+                Failed to authenticate token
+            }            
+
 ### Delete Ferramentas [DELETE /tools/{id}]
 
 + Request (application/json)
@@ -102,4 +108,10 @@ API para a aplicação VUTTR (Very Useful Tools to Remember). A aplicação é u
 
     + Body
 
-            {}            
+            {}  
+
++ Response 401 (application/json)
+
+            {
+                Failed to authenticate token
+            }                         

@@ -4,7 +4,7 @@ var jwt = require('jsonwebtoken');
 module.exports = {
     //loga usuario
     async login(req, res) {
-        //TODO: Criar colletions no banco com todos usuarios
+        //TODO: Criar colletions no banco com todos usuarios e validar login
         const user = { login: req.body.login, pass: req.body.pass };
         const { login } = user.login; //esse id viria do banco de dados
         var token = jwt.sign({ login }, process.env.SECRET, {
